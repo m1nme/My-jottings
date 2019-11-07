@@ -6,21 +6,20 @@ import re
 from aip import AipFace
 
 # 配置百度aip参数
-APP_ID = 'xxxxxxx'
+APP_ID = 'xxxxxx'
 API_KEY = 'xxxxxxxx'
-SECRET_KEY = 'xxxxxxxx'
+SECRET_KEY = 'xxxxxxxxx'
 a_face = AipFace(APP_ID, API_KEY, SECRET_KEY)
 image_type = 'BASE64'
 
 options = {'face_field': 'age,gender,beauty'}
 
 listfilepath = []
-#请先在同一目录下建立一下文件目录
 MEN = "./MAN"
 WOMEN = "./WOMEN"
 BESTMAN = "./BEST/MEN"
 BESTWOMEN = "./BEST/WOMEN"
-PICTUREPATH = "./18"
+PICTUREPATH = "./picture"
 def get_file_content(file_path):
     with open(file_path, 'rb') as fr:
         content = base64.b64encode(fr.read())
@@ -68,6 +67,8 @@ if __name__ == '__main__':
     maxname = ""
     beautiful = []
     tmplist = []
+    count = 0
+    print("Total Number is : ",len(listfilepath))
     for i in listfilepath:
         bestlist = []
         time.sleep(0.3)
@@ -88,7 +89,8 @@ if __name__ == '__main__':
             shutil.copy(i,WOMEN)
         if tmplist[2] == "male":
             shutil.copy(i, MEN)
-        print(searchObj.group(1)," : ",tmplist[1])
+        count = count + 1
+        print(searchObj.group(1)," : ",tmplist[1]," REMAINDER : ",(len(listfilepath)-count))
     print("maxscore : ",max)
     print("maxnum : ",maxname)
     print("This is the 70 score:")
