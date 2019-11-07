@@ -6,9 +6,9 @@ import re
 from aip import AipFace
 
 # 配置百度aip参数
-APP_ID = '17721545'
-API_KEY = 'B0uuQe23S2BdnuwuyD2kGmid'
-SECRET_KEY = '9gPfjN06OKQnfd4AvD8Ee9P3dDRZnNHl'
+APP_ID = 'xxxxxxx'
+API_KEY = 'xxxxxxxx'
+SECRET_KEY = 'xxxxxxxx'
 a_face = AipFace(APP_ID, API_KEY, SECRET_KEY)
 image_type = 'BASE64'
 
