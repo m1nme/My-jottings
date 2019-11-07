@@ -40,20 +40,22 @@ if __name__ == '__main__':
                     tmpstr3 += str(0)
             tmpstr3 += str(j)
             tmpstr4 = tmpstr2 + tmpstr3
-            for k in range(1,70):
-                tmpstr5 = ""
-                if len(str(k)) != 3:
-                    kb = 3 - len(str(k))
-                    for  l in range(kb):
-                        tmpstr5+=str(0)
-                tmpstr5+=str(k)
-                tmpstr6 = tmpstr4+tmpstr5
-                tmpurl = img_url + tmpstr6+".jpg"
-                line1.append(tmpurl)
-                line2.append(tmpstr6)
+            for k in range(1,8):
+                tmpstr4 = tmpstr4+str(k)
+                for j in range(1,60):
+                    tmpstr5 = ""
+                    if len(str(j)) != 2:
+                        kb = 2 - len(str(j))
+                        for  l in range(kb):
+                            tmpstr5+=str(0)
+                    tmpstr5+=str(j)
+                    tmpstr6 = tmpstr4+tmpstr5
+                    tmpurl = img_url + tmpstr6+".jpg"
+                    line1.append(tmpurl)
+                    line2.append(tmpstr6)
     for i in range(len(line1)):
-        time.sleep(0.1)
+        time.sleep(0.5)
         if i%50 == 0:
-            time.sleep(1)
+            time.sleep(2)
         download_img(line1[i],line2[i])
     print("All DownLoad!")
