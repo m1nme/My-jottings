@@ -41,18 +41,18 @@ if __name__ == '__main__':
             tmpstr3 += str(j)
             tmpstr4 = tmpstr2 + tmpstr3
             for k in range(1,8):
-                tmpstr4 = tmpstr4+str(k)
+                tmpstr5 = tmpstr4+str(k)
                 for j in range(1,60):
-                    tmpstr5 = ""
+                    tmpstr6 = ""
                     if len(str(j)) != 2:
                         kb = 2 - len(str(j))
                         for  l in range(kb):
-                            tmpstr5+=str(0)
-                    tmpstr5+=str(j)
-                    tmpstr6 = tmpstr4+tmpstr5
-                    tmpurl = img_url + tmpstr6+".jpg"
+                            tmpstr6+=str(0)
+                    tmpstr6+=str(j)
+                    tmpstr7 = tmpstr5+tmpstr6
+                    tmpurl = img_url + tmpstr7+".jpg"
                     line1.append(tmpurl)
-                    line2.append(tmpstr6)
+                    line2.append(tmpstr7)
     for i in range(len(line1)):
         time.sleep(0.5)
         if i%50 == 0:
