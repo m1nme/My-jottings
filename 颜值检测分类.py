@@ -15,6 +15,7 @@ image_type = 'BASE64'
 options = {'face_field': 'age,gender,beauty'}
 
 listfilepath = []
+#请先在同一目录下建立一下文件目录
 MEN = "./MAN"
 WOMEN = "./WOMEN"
 BESTMAN = "./BEST/MEN"
