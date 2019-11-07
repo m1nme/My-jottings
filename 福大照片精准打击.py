@@ -26,18 +26,18 @@ if __name__ == '__main__':
     line2 = []
     tmpstr2 = str(school)+str(grade)+str(word)
     for i in range(1,8):
-        tmpstr2+=str(i)
+        tmpstr3 = tmpstr2 + str(i)
         for j in range(1,60):
-            tmpstr3 = ""
+            tmpstr4 = ""
             if len(str(j)) != 2:
                 kb = 2 - len(str(j))
                 for k in range(kb):
-                    tmpstr3+=str(0)
-            tmpstr3+=str(j)
-            tmpstr4 = tmpstr2+tmpstr3
-            tmpurl = img_url + tmpstr4+".jpg"
+                    tmpstr4+=str(0)
+            tmpstr4+=str(j)
+            tmpstr5 = tmpstr3+tmpstr4
+            tmpurl = img_url + tmpstr5+".jpg"
             line1.append(tmpurl)
-            line2.append(tmpstr4)
+            line2.append(tmpstr5)
     for i in range(len(line1)):
         time.sleep(0.1)
         #if i%50 == 0:
