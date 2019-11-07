@@ -27,10 +27,10 @@ if __name__ == '__main__':
     tmpstr2 = str(school)+str(grade)+str(word)
     for i in range(1,8):
         tmpstr2+=str(i)
-        for j in range(100,899):
+        for j in range(1,60):
             tmpstr3 = ""
-            if len(str(j)) != 3:
-                kb = 3 - len(str(i))
+            if len(str(j)) != 2:
+                kb = 2 - len(str(j))
                 for k in range(kb):
                     tmpstr3+=str(0)
             tmpstr3+=str(j)
