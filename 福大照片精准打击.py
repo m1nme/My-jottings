@@ -14,7 +14,6 @@ def download_img(img_url,num):
     print("")
     del r
 if __name__ == '__main__':
-    # 下载要的图片
     r = requests.get("http://59.77.226.32/xszp/000000000.jpg")
     error = r.content
     del r
@@ -26,17 +25,19 @@ if __name__ == '__main__':
     line1 = []
     line2 = []
     tmpstr2 = str(school)+str(grade)+str(word)
-    for i in range(1,999):
-        tmpstr3 = ""
-        if len(str(i)) != 3:
-            kb = 3 - len(str(i))
-            for j in range(kb):
-                tmpstr3+=str(0)
-        tmpstr3+=str(i)
-        tmpstr4 = tmpstr2+tmpstr3
-        tmpurl = img_url + tmpstr4+".jpg"
-        line1.append(tmpurl)
-        line2.append(tmpstr4)
+    for i in range(1,8):
+        tmpstr2+=str(i)
+        for j in range(100,899):
+            tmpstr3 = ""
+            if len(str(j)) != 3:
+                kb = 3 - len(str(i))
+                for k in range(kb):
+                    tmpstr3+=str(0)
+            tmpstr3+=str(j)
+            tmpstr4 = tmpstr2+tmpstr3
+            tmpurl = img_url + tmpstr4+".jpg"
+            line1.append(tmpurl)
+            line2.append(tmpstr4)
     for i in range(len(line1)):
         time.sleep(0.1)
         #if i%50 == 0:
