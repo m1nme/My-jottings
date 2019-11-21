@@ -4,13 +4,17 @@ import time
 adress="http://59.77.226.32/xszp/"
 grade = ""
 error = ""
-def download_img(img_url,num):
+count = 0
+def download_img(img_url, num):
     print(num,end="")
     r = requests.get (img_url,stream=True)
     tmpstr = str(num)+".jpg"
     if r.status_code == 200 and r.content!=error:
+        global count
+        count = count + 1
         open(tmpstr, 'wb').write(r.content)
         print(" Download Successful",end="")
+        print(" Count is : ",count,end="")
     print("")
     del r
 if __name__ == '__main__':
@@ -55,6 +59,7 @@ if __name__ == '__main__':
                     line2.append(tmpstr7)
     for i in range(len(line1)):
         time.sleep(0.5)
+
         if i%50 == 0:
             time.sleep(2)
         download_img(line1[i],line2[i])
