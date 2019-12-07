@@ -1,0 +1,8 @@
+D:\C#\CPUINFO\bin\Debug\CPUINFO.exe.config
+D:\C#\CPUINFO\bin\Debug\CPUINFO.exe
+D:\C#\CPUINFO\bin\Debug\CPUINFO.pdb
+D:\C#\CPUINFO\bin\Debug\OpenHardwareMonitorLib.dll
+D:\C#\CPUINFO\obj\Debug\CPUINFO.csprojAssemblyReference.cache
+D:\C#\CPUINFO\obj\Debug\CPUINFO.csproj.CopyComplete
+D:\C#\CPUINFO\obj\Debug\CPUINFO.exe
+D:\C#\CPUINFO\obj\Debug\CPUINFO.pdb
