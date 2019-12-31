@@ -35,7 +35,7 @@ def LAN(List):
     for i in List:
         matchObj = re.search(r'GbE Family Controller', i.name)
         if matchObj:
-            print("成功 :")
+            print("成功")
             print("LAN :" + i.name)
             return i.port
     return 0
@@ -43,13 +43,13 @@ def WLAN(List):
     for i in List:
         matchObj = re.search(r'Realtek RTL', i.name)
         if matchObj:
-            print("成功 :")
+            print("成功")
             print("WLAN :" + i.name)
             return i.port
     for i in List:
         matchObj = re.search(r'Intel(R) Wireless', i.name)
         if matchObj:
-            print("成功 :")
+            print("成功")
             print("LAN :" + i.name)
             return i.port
     return 0
