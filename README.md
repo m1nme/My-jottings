@@ -20,6 +20,7 @@
 |   EMIXED_Code    |        自动混淆C++或C语言的源代码格式        | Python |  2019.12.01  |
 |     WatchDog     |           Windows平台硬件信息监控            |   C#   |     未知     |
 |      CTFNET      |          CTF线下赛网络环境配置脚本           | Python |  2019.12.31  |
+|       IDA        |                 一些IDA脚本                  |  IDC   |  2019.12.31  |
 
 # 开发日志
 
