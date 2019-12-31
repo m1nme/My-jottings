@@ -19,7 +19,7 @@ def download_img(img_url, num):
     del r
 if __name__ == '__main__':
     # 下载要的图片
-    r = requests.get("http://59.77.226.32/xszp/000000000.jpg")
+    r = requests.get("http://59.77.226.32/xszp/18/000000000.jpg")
     error = r.content
     del r
     grade = input("请输入年段:")
