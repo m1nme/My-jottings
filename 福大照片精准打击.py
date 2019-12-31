@@ -14,7 +14,7 @@ def download_img(img_url,num):
     print("")
     del r
 if __name__ == '__main__':
-    r = requests.get("http://59.77.226.32/xszp/000000000.jpg")
+    r = requests.get("http://59.77.226.32/xszp/18/000000000.jpg")
     error = r.content
     del r
     school = input("请输入学院号：")
