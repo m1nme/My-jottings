@@ -21,6 +21,7 @@
 |     WatchDog     |           Windows平台硬件信息监控            |   C#   |     未知     |
 |      CTFNET      |          CTF线下赛网络环境配置脚本           | Python |  2019.12.31  |
 |       IDA        |                 一些IDA脚本                  |  IDC   |  2019.12.31  |
+|  I-LOVE-Yuzuru   |         为羽生结弦的2020韩国比赛查票         | Python |  2020.01.05  |
 
 # 开发日志
 
@@ -34,3 +35,6 @@
 
 项目迁移到独立仓库`suyucheng-lz/WatchDog`
 
+# 备注
+
+- I-LOVE-Yuzuru感谢`https://github.com/sunnyMengXing/check4cc`寻找到的接口和框架
