@@ -27,14 +27,14 @@ goodsCodePACK = "19016423"
 
 def mail1(data,block):
     # 发信方的信息：发信邮箱，QQ 邮箱授权码
-    from_addr = '929672159@qq.com'
-    password = 'zdxykuxiamembcec'
+    from_addr = 'x@qq.com'
+    password = 'xxxx'
     # 收信方邮箱
-    to_addr = 'suyuchenglz@163.com'
+    to_addr = 'xxxxx@163.com'
     # 发信服务器
     smtp_server = 'smtp.qq.com'
     # 邮箱正文内容，第一个参数为内容，第二个参数为格式(plain 为纯文本)，第三个参数为编码
-    msg = MIMEText('send by suyucheng', 'plain', 'utf-8')
+    msg = MIMEText('send by xxxxxx', 'plain', 'utf-8')
     # 邮件头信息
     msg['From'] = Header(from_addr)
     msg['To'] = Header(to_addr)
