@@ -23,6 +23,7 @@
 |        IDA         |                 一些IDA脚本                  |  IDC   |  2019.12.31  |
 |   I-LOVE-Yuzuru    |         为羽生结弦的2020韩国比赛查票         | Python |  2020.01.05  |
 | I-LOVE-Yuzuru-PLUS |        改良增强版本，注意ID每天会变化        | Python |  2020.01.07  |
+|      COMOOC20      |           到点自动上网课带系统弹窗           | Python |  2020.02.16  |
 
 # 开发日志
 
