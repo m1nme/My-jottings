@@ -1,9 +1,7 @@
 import json
 import ast
 import webbrowser
-import sys
 import time
-import os
 import sys
 from win10toast import ToastNotifier
 class Course:
@@ -80,9 +78,12 @@ def Run():
         today = time.strftime("%u")
         time1  = int(time.strftime("%H"))
         for i in Courses:
-            if time1 == i.data[today]:
-                NOTICE(i.name)
-                Open(i.url)
+            try:
+                if time1 == i.data[today]:
+                    NOTICE(i.name)
+                    Open(i.url)
+            except:
+                continue
         time.sleep(60)
 if __name__ == '__main__':
     way = input("请选择（1）输入模式（2）清空输入（3）开始运行：")
