@@ -279,9 +279,31 @@ Up_Python(){
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 }
 
+In_Pwndbg(){
+    echo "---------------------------------------------------------------------------------"
+    echo "Install Pwndbg"
+    echo "---------------------------------------------------------------------------------"
+    git clone https://github.com/pwndbg/pwndbg
+    cd pwndbg
+    ./setup.sh
+    cd..
+}
+
+In_Pwntools(){
+    echo "---------------------------------------------------------------------------------"
+    echo "Install Pwntools"
+    echo "---------------------------------------------------------------------------------"
+    apt-get update
+    apt-get install python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential -y
+    python3 -m pip install --upgrade pip
+    python3 -m pip install --upgrade pwntools
+}
+
 main(){
     Ch_Root
     Ch_System
     Up_Python	
+    In_Pwntools
+    In_Pwndbg
 }
 main
