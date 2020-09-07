@@ -32,15 +32,15 @@
 
 本人写的一些Bash脚本使用指南
 
-## Easy-PWN
+## New
 
 用于自动更换国内清华源更新包管理器与Pyhton源，快速配置一台可以用的PWN环境
 
 ```bash
-sudo curl 
+curl https://github.com/ZERO-A-ONE/My-jottings/raw/master/Shell/New.sh 
+sudo chmod +x New.sh
+sudo ./New.sh
 ```
-
-
 
 # 开发日志
 
