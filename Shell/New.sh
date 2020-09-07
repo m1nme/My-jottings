@@ -240,9 +240,16 @@ Conf_Debian(){
     fi
 }
 
+Up_Python(){
+    echo "Python Update"
+    apt install python2 python3 python2-pip python3-pip -y
+    pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+}
 
 main(){
     Ch_Root
-    Ch_System	
+    Ch_System
+    Up_Python	
 }
 main
