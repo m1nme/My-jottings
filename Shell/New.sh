@@ -4,13 +4,17 @@ DISTRO=""
 Version=0
 
 Ch_System(){
+    echo "---------------------------------------------------------------------------------"
+    echo "Check Info System"
+    echo "---------------------------------------------------------------------------------"
     Linux_True=0
     if [ "$(uname)" == "Darwin" ];then
-        echo '目前本脚本仅支持Linux'
-    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ];then   
+        echo '->目前本脚本仅支持Linux'
+    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ];then  
+        echo '->当前操作系统：Linux' 
         Linux_True=1
     elif ["$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ];then    
-        echo '目前本脚本仅支持Linux'
+        echo '->目前本脚本仅支持Linux'
     fi
     
     if [ $Linux_True == 1 ];then
@@ -27,6 +31,9 @@ Ch_System(){
 }
 
 Ch_Liunx(){
+    echo "---------------------------------------------------------------------------------"
+    echo "Check Distro Linux"
+    echo "---------------------------------------------------------------------------------"
     if grep -Eqii "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
         DISTRO="CentOS"
         #PM='yum'
@@ -51,9 +58,13 @@ Ch_Liunx(){
     else
         DISTRO='unknow'
     fi
+    echo "->当前发行版：$DISTRO"
 }
 
 ch_Ubuntu(){
+    echo "---------------------------------------------------------------------------------"
+    echo "Check Ubuntu Version"
+    echo "---------------------------------------------------------------------------------"
     if grep "16.04" /etc/issue >nul 2>nul; then
         Version=16.04
     elif grep "18.04" /etc/issue >nul 2>nul; then
@@ -61,9 +72,13 @@ ch_Ubuntu(){
     elif grep "20.04" /etc/issue >nul 2>nul; then
         Version=20.04
     fi
+    echo "->当前Ubuntu版本：$Version"
 }
 
 ch_Debian(){
+    echo "---------------------------------------------------------------------------------"
+    echo "Check Debian Version"
+    echo "---------------------------------------------------------------------------------"
     if grep "11" /etc/issue >nul 2>nul; then
         Version=11
     elif grep "10" /etc/issue >nul 2>nul; then
@@ -73,14 +88,20 @@ ch_Debian(){
     elif grep "8" /etc/issue >nul 2>nul; then
         Version=8
     fi
+    echo "->当前Debian版本：$Version"
 }
 
 
 Ch_Root(){
-    if [ `whoami` != "root" ];then
-    echo "This script must be runing as root!!!"
-    exit 71
-fi
+    echo "---------------------------------------------------------------------------------"
+    echo "Check Root"
+    echo "---------------------------------------------------------------------------------"
+    if [ `whoami` != "root" ]; then
+        echo "->This script must be runing as root!!!"
+        exit 71
+    else
+        echo "->Runing as Root"
+    fi
 }
 
 #配置ubuntu16.04网络源
@@ -213,7 +234,10 @@ EOF
 
 
 Conf_Ubuntu(){
-    echo "$Version"
+    echo "---------------------------------------------------------------------------------"
+    echo "Update Ubuntu APT Source"
+    echo "---------------------------------------------------------------------------------"
+    echo "THe Ubuntu Version : $Version"
     if [ $Version == 16.04 ];then
         Conf_Ubuntu16.04
     elif [ $Version == 18.04 ];then
@@ -226,7 +250,10 @@ Conf_Ubuntu(){
 }
 
 Conf_Debian(){
-    echo "$Version"
+    echo "---------------------------------------------------------------------------------"
+    echo "Update Ubuntu APT Source"
+    echo "---------------------------------------------------------------------------------"
+    echo "THe Debian Version : $Version"
     if [ $Version == 11 ];then
         Conf_DebianBullseye
     elif [ $Version == 10 ];then
@@ -241,8 +268,13 @@ Conf_Debian(){
 }
 
 Up_Python(){
-    echo "Python Update"
-    apt install python2 python3 python2-pip python3-pip -y
+    echo "---------------------------------------------------------------------------------"
+    echo "Install Python and Pip"
+    echo "---------------------------------------------------------------------------------"
+    apt install python2 python3 python-pip python3-pip -y
+    echo "---------------------------------------------------------------------------------"
+    echo "Update Python Source"
+    echo "---------------------------------------------------------------------------------"
     pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 }
