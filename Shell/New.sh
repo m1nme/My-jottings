@@ -286,7 +286,7 @@ In_Pwndbg(){
     git clone https://github.com/pwndbg/pwndbg
     cd pwndbg
     ./setup.sh
-    cd..
+    cd ..
 }
 
 In_Pwntools(){
